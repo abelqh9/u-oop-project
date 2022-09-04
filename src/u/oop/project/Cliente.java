@@ -18,6 +18,14 @@ public class Cliente {
     
     public Cliente (){}
     
+    public Cliente(String tipodocumento, int numerodocumento, String nombre, String direccion) {
+        this.tipodocumento = tipodocumento;
+        this.numerodocumento = numerodocumento;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+    }
+    
     public Cliente(String tipodocumento, int numerodocumento, String nombre, String apellido, String direccion) {
         this.tipodocumento = tipodocumento;
         this.numerodocumento = numerodocumento;

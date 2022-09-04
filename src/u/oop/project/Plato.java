@@ -53,4 +53,9 @@ public class Plato {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+    
+    @Override
+    public String toString() {
+        return "Plato{" + "idplato = " + idplato + ", tipoplato = " + tipoplato + ", descripcion = " + descripcion + ", precio = " + precio + '}';
+    }
 }

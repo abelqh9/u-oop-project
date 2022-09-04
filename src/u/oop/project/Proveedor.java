@@ -12,13 +12,13 @@ public class Proveedor {
     private double idproveedor;
     private String tipodocumento;
     private String razonsocial;
-    private double direccion;
+    private String direccion;
     private String producto;
 
     public Proveedor() {
     }
 
-    public Proveedor(double idproveedor, String tipodocumento, String razonsocial, double direccion, String producto) {
+    public Proveedor(double idproveedor, String tipodocumento, String razonsocial, String direccion, String producto) {
         this.idproveedor = idproveedor;
         this.tipodocumento = tipodocumento;
         this.razonsocial = razonsocial;
@@ -50,11 +50,11 @@ public class Proveedor {
         this.razonsocial = razonsocial;
     }
 
-    public double getDireccion() {
+    public String getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(double direccion) {
+    public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
