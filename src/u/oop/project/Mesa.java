@@ -4,52 +4,74 @@
  */
 package u.oop.project;
 
+import java.util.Vector;
+
 /**
  *
  * @author Abel
  */
 public class Mesa {
-    private double idmesa;
-    private int numeromesa;
-    private String ubicacion;
+    
+    private double id;
+    private int numero;
+    private Vector<Cliente> clientes;
+    private Pedido pedido;
+    private Trabajador trabajador;
 
     public Mesa() {
     }
 
-    public Mesa(double idmesa, int numeromesa, String ubicacion) {
-        this.idmesa = idmesa;
-        this.numeromesa = numeromesa;
-        this.ubicacion = ubicacion;
+    public Mesa(double id, int numero, Vector<Cliente> clientes, Pedido pedido, Trabajador trabajador) {
+        this.id = id;
+        this.numero = numero;
+        this.clientes = clientes;
+        this.pedido = pedido;
+        this.trabajador = trabajador;
     }
 
-    public double getIdmesa() {
-        return idmesa;
+    public double getId() {
+        return id;
     }
 
-    public void setIdmesa(double idmesa) {
-        this.idmesa = idmesa;
+    public void setId(double id) {
+        this.id = id;
     }
 
-    public int getNumeromesa() {
-        return numeromesa;
+    public int getNumero() {
+        return numero;
     }
 
-    public void setNumeromesa(int numeromesa) {
-        this.numeromesa = numeromesa;
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
-    public String getUbicacion() {
-        return ubicacion;
+    public Vector<Cliente> getClientes() {
+        return clientes;
     }
 
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
+    public void setClientes(Vector<Cliente> clientes) {
+        this.clientes = clientes;
     }
 
-    
-    public String DetallesdeMesa() {
-        return "mesa{" + "id de mesa=" + idmesa 
-                + ", numero de mesa=" + numeromesa 
-                + ", ubicacion=" + ubicacion + '}';
+    public Pedido getPedido() {
+        return pedido;
     }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
+    public Trabajador getTrabajador() {
+        return trabajador;
+    }
+
+    public void setTrabajador(Trabajador trabajador) {
+        this.trabajador = trabajador;
+    }
+
+    @Override
+    public String toString() {
+        return "Mesa{" + "id=" + id + ", numero=" + numero + ", clientes=" + clientes + ", pedido=" + pedido + ", trabajador=" + trabajador + '}';
+    }
+  
 }

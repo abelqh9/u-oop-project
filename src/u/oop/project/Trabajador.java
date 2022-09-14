@@ -8,27 +8,35 @@ package u.oop.project;
  *
  * @author Abel
  */
-public class Trabajador {
+public class Trabajador extends Persona{
     
-    private String nombre;
-    private String apellido;
+    private String cargo;
     private double sueldo;
-    //sobrecarga de constructores
 
-    public Trabajador() {
-        System.out.println("probando");
+    public Trabajador(String cargo, double sueldo, int id, String tipo_doc, int numero_doc, String nombre, String sexo, int edad, int celular) {
+        super(id, tipo_doc, numero_doc, nombre, sexo, edad, celular);
+        this.cargo = cargo;
+        this.sueldo = sueldo;
     }
 
-    public Trabajador(String n, String a, double s) {
-        this.nombre = n;
-        this.apellido = a;
-        this.sueldo = s;
-
+    public String getCargo() {
+        return cargo;
     }
 
-    String MostrarDatos() {
-        return "Nombres    :   " + nombre
-                + "\nApellidos  :   " + apellido
-                + "\nSueldo     :   " + sueldo;
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    @Override
+    public String toString() {
+        return "Trabajador{" + "cargo=" + cargo + ", sueldo=" + sueldo + '}';
     }
 }

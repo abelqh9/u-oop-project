@@ -4,24 +4,23 @@
  */
 package u.oop.project;
 
-import java.util.Date;
-
 /**
  *
  * @author Abel
  */
-public class Comprobante {
+public class Bebida {
     
+    //atributos
     private int id;
     private String tipo;
-    private Date fecha;
-    private Mesa mesa;
+    private String nombre;
+    private double precio;
 
-    public Comprobante(int id, String tipo, Date fecha, Mesa mesa) {
+    public Bebida(int id, String tipo, String nombre, double precio) {
         this.id = id;
         this.tipo = tipo;
-        this.fecha = fecha;
-        this.mesa = mesa;
+        this.nombre = nombre;
+        this.precio = precio;
     }
 
     public int getId() {
@@ -40,25 +39,24 @@ public class Comprobante {
         this.tipo = tipo;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public Mesa getMesa() {
-        return mesa;
+    public double getPrecio() {
+        return precio;
     }
 
-    public void setMesa(Mesa mesa) {
-        this.mesa = mesa;
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
     @Override
     public String toString() {
-        return "Comprobante{" + "id=" + id + ", tipo=" + tipo + ", fecha=" + fecha + ", mesa=" + mesa + '}';
+        return "Bebida{" + "id=" + id + ", tipo=" + tipo + ", nombre=" + nombre + ", precio=" + precio + '}';
     }
-    
 }

@@ -4,73 +4,61 @@
  */
 package u.oop.project;
 
+import java.util.Vector;
+
 /**
  *
  * @author Abel
  */
 public class Pedido {
     
+    private int id;
     private String fecha;
-    private int idcliente;
-    private int idtrabajador;
-    private String mesa;
-    private String descripciondelpedido;
-    private double cantidad;
+    private Vector<Plato> platos;
+    private Vector<Bebida> bebidas;
 
-    public Pedido() {
-    }
-    
-    public Pedido(String fecha , int idcliente, int idtrabajador, String mesa, String descripciondelpedido, double cantidad) {
-        this.idcliente = idcliente;
+    public Pedido(int id, String fecha, Vector<Plato> platos, Vector<Bebida> bebidas) {
+        this.id = id;
         this.fecha = fecha;
-        this.idtrabajador = idtrabajador;
-        this.mesa = mesa;
-        this.descripciondelpedido = descripciondelpedido;
-        this.cantidad = cantidad;
+        this.platos = platos;
+        this.bebidas = bebidas;
     }
 
-    public int getIdcliente() {
-        return idcliente;
+    public int getId() {
+        return id;
     }
 
-    public void setIdcliente(int idcliente) {
-        this.idcliente = idcliente;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getIdtrabajador() {
-        return idtrabajador;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setIdtrabajador(int idtrabajador) {
-        this.idtrabajador = idtrabajador;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
-    public String getMesa() {
-        return mesa;
+    public Vector<Plato> getPlatos() {
+        return platos;
     }
 
-    public void setMesa(String mesa) {
-        this.mesa = mesa;
+    public void setPlatos(Vector<Plato> platos) {
+        this.platos = platos;
     }
 
-    public String getDescripciondelpedido() {
-        return descripciondelpedido;
+    public Vector<Bebida> getBebidas() {
+        return bebidas;
     }
 
-    public void setDescripciondelpedido(String descripciondelpedido) {
-        this.descripciondelpedido = descripciondelpedido;
-    }
-
-    public double getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(double cantidad) {
-        this.cantidad = cantidad;
+    public void setBebidas(Vector<Bebida> bebidas) {
+        this.bebidas = bebidas;
     }
 
     @Override
     public String toString() {
-        return "Pedido{" + "idcliente = " + idcliente + ", idtrabajador = " + idtrabajador + ", mesa = " + mesa + ", descripciondelpedido = " + descripciondelpedido + ", cantidad = " + cantidad + '}';
+        return "Pedido{" + "id=" + id + ", fecha=" + fecha + ", platos=" + platos + ", bebidas=" + bebidas + '}';
     }
+    
 }
