@@ -1,0 +1,30 @@
+.root{
+   -fx-background-color: #383838;
+}
+
+.h1{
+   -fx-text-fill: #ffffff;
+   -fx-font: 32px "Serif";
+}
+
+.h2{
+   -fx-text-fill: #ffffff;
+   -fx-font: 24px "Serif";
+}
+
+.h3{
+   -fx-text-fill: #ffffff;
+   -fx-font: 20px "Serif";
+}
+
+.start-button{
+   -fx-background-color: #F7FF00;
+   -fx-text-fill: #000000;
+   -fx-padding: 10 15 10 15;
+   -fx-background-radius: 20;
+   -fx-font: 16px "Serif";
+}
+
+.menu-box{
+   -fx-background-color: #636363;
+}
