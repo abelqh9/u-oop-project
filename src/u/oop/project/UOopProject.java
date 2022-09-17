@@ -164,6 +164,12 @@ public class UOopProject extends Application {
         mesaBox1WorkersTitle.getStyleClass().add("h3");
         
         Button mesaBox1WorkersButton = new Button("Añadir");
+        mesaBox1WorkersButton.setOnAction(e -> {
+            Trabajador mozoSeleccionado = AddMozoBox.display();
+            System.out.println(mozoSeleccionado);
+            this.workersTableArray1.add(mozoSeleccionado);
+            workersTable1.getItems();
+        });
         
         HBox mesaBox1WorkersTittleButtonBox = new HBox(20);
         mesaBox1WorkersTittleButtonBox.getChildren().addAll(mesaBox1WorkersTitle, mesaBox1WorkersButton);
@@ -384,15 +390,15 @@ public class UOopProject extends Application {
         workersTable2 = new TableView<>();
         workersTable2.setItems(workersTableArray2);
         workersTable2.getColumns().addAll(
-                idWorkerColumn1, 
-                tipoDocWorkerColumn1, 
-                numeroDocWorkerColumn1, 
-                nombreWorkerColumn1, 
-                sexoWorkerColumn1, 
-                edadWorkerColumn1, 
-                celularWorkerColumn1, 
-                cargoWorkerColumn1,
-                sueldoWorkerColumn1
+                idWorkerColumn2, 
+                tipoDocWorkerColumn2, 
+                numeroDocWorkerColumn2, 
+                nombreWorkerColumn2, 
+                sexoWorkerColumn2, 
+                edadWorkerColumn2, 
+                celularWorkerColumn2, 
+                cargoWorkerColumn2,
+                sueldoWorkerColumn2
         );
 
         // mesa 2 - pedido
@@ -559,15 +565,15 @@ public class UOopProject extends Application {
         workersTable3 = new TableView<>();
         workersTable3.setItems(workersTableArray3);
         workersTable3.getColumns().addAll(
-                idWorkerColumn1, 
-                tipoDocWorkerColumn1, 
-                numeroDocWorkerColumn1, 
-                nombreWorkerColumn1, 
-                sexoWorkerColumn1, 
-                edadWorkerColumn1, 
-                celularWorkerColumn1, 
-                cargoWorkerColumn1,
-                sueldoWorkerColumn1
+                idWorkerColumn3, 
+                tipoDocWorkerColumn3, 
+                numeroDocWorkerColumn3, 
+                nombreWorkerColumn3, 
+                sexoWorkerColumn3, 
+                edadWorkerColumn3, 
+                celularWorkerColumn3, 
+                cargoWorkerColumn3,
+                sueldoWorkerColumn3
         );
 
         // mesa 3 - pedido
