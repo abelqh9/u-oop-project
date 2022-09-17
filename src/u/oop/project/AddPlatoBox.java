@@ -26,7 +26,7 @@ public class AddPlatoBox {
         Stage window = new Stage();
         
         window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle("Selecciona un Mozo");
+        window.setTitle("Selecciona un Plato");
         window.setMinWidth(300);
         
         CheckBox box1 = new CheckBox("1/4 pollo + 750ml Inkacola");
@@ -50,7 +50,7 @@ public class AddPlatoBox {
                         1,
                         "Para 2",
                         "1/2 pollo + 1.5lt Inkacola",
-                        15
+                        25
                 );
                 window.close();
             }else if(box3.isSelected()){
@@ -58,7 +58,7 @@ public class AddPlatoBox {
                         1,
                         "Para 3",
                         "1/2 + 1/4 pollo + 2lt Inkacola",
-                        15
+                        35
                 );
                 window.close();
             }else if(box4.isSelected()){
@@ -66,7 +66,7 @@ public class AddPlatoBox {
                         1,
                         "Para 4",
                         "1 pollo + 3lt Inkacola",
-                        15
+                        45
                 );
                 window.close();
             }

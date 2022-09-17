@@ -5,6 +5,7 @@
 package u.oop.project;
 
 import java.util.Vector;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -14,18 +15,19 @@ public class Mesa {
     
     private double id;
     private int numero;
-    private Vector<Cliente> clientes;
-    private Pedido pedido;
+    private ObservableList<Cliente> clientes;
+    private ObservableList<Plato> platos;
     private Trabajador trabajador;
 
     public Mesa() {
+        
     }
 
-    public Mesa(double id, int numero, Vector<Cliente> clientes, Pedido pedido, Trabajador trabajador) {
+    public Mesa(double id, int numero, ObservableList<Cliente> clientes, ObservableList<Plato> platos, Trabajador trabajador) {
         this.id = id;
         this.numero = numero;
         this.clientes = clientes;
-        this.pedido = pedido;
+        this.platos = platos;
         this.trabajador = trabajador;
     }
 
@@ -45,20 +47,20 @@ public class Mesa {
         this.numero = numero;
     }
 
-    public Vector<Cliente> getClientes() {
+    public ObservableList<Cliente> getClientes() {
         return clientes;
     }
 
-    public void setClientes(Vector<Cliente> clientes) {
+    public void setClientes(ObservableList<Cliente> clientes) {
         this.clientes = clientes;
     }
 
-    public Pedido getPedido() {
-        return pedido;
+    public ObservableList<Plato> getPlatos() {
+        return platos;
     }
 
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
+    public void setPlatos(ObservableList<Plato> platos) {
+        this.platos = platos;
     }
 
     public Trabajador getTrabajador() {
@@ -71,7 +73,7 @@ public class Mesa {
 
     @Override
     public String toString() {
-        return "Mesa{" + "id=" + id + ", numero=" + numero + ", clientes=" + clientes + ", pedido=" + pedido + ", trabajador=" + trabajador + '}';
+        return "Mesa{" + "id=" + id + ", numero=" + numero + ", clientes=" + clientes + ", platos=" + platos + ", trabajador=" + trabajador + '}';
     }
   
 }

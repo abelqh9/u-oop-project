@@ -27,6 +27,8 @@ public class UOopProject extends Application {
     Scene startScene, dashboardScene;
 
     //
+    Mesa mesa1;
+    Trabajador mozo1;
     TableView<Cliente> clientsTable1;
     ObservableList<Cliente> clientsTableArray1 = FXCollections.observableArrayList();
 
@@ -93,6 +95,15 @@ public class UOopProject extends Application {
         DashboardHeaderBox.setAlignment(Pos.TOP_CENTER);
 
         // mesa 1
+        
+        mesa1 = new Mesa(
+            1,
+            1,
+            clientsTableArray1,
+            pedidosTableArray1,
+            mozo1
+        );
+        
         Label mesaBox1Title = new Label("Mesa 1");
         mesaBox1Title.getStyleClass().add("h2");
         mesaBox1Title.setMaxWidth(Double.MAX_VALUE);
@@ -107,6 +118,7 @@ public class UOopProject extends Application {
             Cliente newClient = AddClientBox.display();
             System.out.println(newClient);
             this.clientsTableArray1.add(newClient);
+            mesa1.setClientes(clientsTableArray1);
             clientsTable1.getItems();
         });
         
@@ -168,6 +180,7 @@ public class UOopProject extends Application {
             Trabajador mozoSeleccionado = AddMozoBox.display();
             System.out.println(mozoSeleccionado);
             this.workersTableArray1.add(mozoSeleccionado);
+            mesa1.setTrabajador(mozoSeleccionado);
             workersTable1.getItems();
         });
         
@@ -234,6 +247,7 @@ public class UOopProject extends Application {
             Plato platoSeleccionado = AddPlatoBox.display();
             System.out.println(platoSeleccionado);
             this.pedidosTableArray1.add(platoSeleccionado);
+            mesa1.setPlatos(pedidosTableArray1);
             pedidosTable1.getItems();
         });
         
@@ -267,7 +281,23 @@ public class UOopProject extends Application {
 
         // - mesa 1 - comprobante
         Button mesaBox1GenerarComprobanteButton = new Button("Generar Comprobante");
-
+        mesaBox1GenerarComprobanteButton.setOnAction(e -> {
+            boolean limpiarMesa = SeePedido.display(mesa1);
+            System.out.println(limpiarMesa);
+            if(limpiarMesa){
+                clientsTableArray1.clear();
+                workersTableArray1.clear();
+                pedidosTableArray1.clear();
+                mesa1 = new Mesa(
+                    1,
+                    1,
+                    clientsTableArray1,
+                    pedidosTableArray1,
+                    mozo1
+                );
+            }
+        });
+        
         //
         VBox menuBox1 = new VBox(15);
         menuBox1.getChildren().addAll(
