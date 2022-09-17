@@ -230,6 +230,12 @@ public class UOopProject extends Application {
         mesaBox1PedidoTitle.getStyleClass().add("h3");
         
         Button mesaBox1PedidoButton = new Button("Añadir");
+        mesaBox1PedidoButton.setOnAction(e -> {
+            Plato platoSeleccionado = AddPlatoBox.display();
+            System.out.println(platoSeleccionado);
+            this.pedidosTableArray1.add(platoSeleccionado);
+            pedidosTable1.getItems();
+        });
         
         HBox mesaBox1PedidoTittleButtonBox = new HBox(20);
         mesaBox1PedidoTittleButtonBox.getChildren().addAll(mesaBox1PedidoTitle, mesaBox1PedidoButton);
@@ -243,7 +249,7 @@ public class UOopProject extends Application {
         tipoPlatoColumn1.setCellValueFactory(new PropertyValueFactory<>("tipo"));
 
         TableColumn<Plato, String> nombrePlatoColumn1 = new TableColumn<>("Nombre");
-        nombrePlatoColumn1.setMaxWidth(100);
+        nombrePlatoColumn1.setMinWidth(150);
         nombrePlatoColumn1.setCellValueFactory(new PropertyValueFactory<>("nombre"));
 
         TableColumn<Plato, String> precioPlatoColumn1 = new TableColumn<>("Precio");
@@ -419,7 +425,7 @@ public class UOopProject extends Application {
         tipoPlatoColumn2.setCellValueFactory(new PropertyValueFactory<>("tipo"));
 
         TableColumn<Plato, String> nombrePlatoColumn2 = new TableColumn<>("Nombre");
-        nombrePlatoColumn2.setMaxWidth(100);
+        nombrePlatoColumn2.setMinWidth(150);
         nombrePlatoColumn2.setCellValueFactory(new PropertyValueFactory<>("nombre"));
 
         TableColumn<Plato, String> precioPlatoColumn2 = new TableColumn<>("Precio");
@@ -429,10 +435,10 @@ public class UOopProject extends Application {
         pedidosTable2 = new TableView<>();
         pedidosTable2.setItems(pedidosTableArray2);
         pedidosTable2.getColumns().addAll(
-                idPlatoColumn1, 
-                tipoPlatoColumn1, 
-                nombrePlatoColumn1, 
-                precioPlatoColumn1
+                idPlatoColumn2, 
+                tipoPlatoColumn2, 
+                nombrePlatoColumn2, 
+                precioPlatoColumn2
         );
 
         // - mesa 2 - comprobante
@@ -594,7 +600,7 @@ public class UOopProject extends Application {
         tipoPlatoColumn3.setCellValueFactory(new PropertyValueFactory<>("tipo"));
 
         TableColumn<Plato, String> nombrePlatoColumn3 = new TableColumn<>("Nombre");
-        nombrePlatoColumn3.setMaxWidth(100);
+        nombrePlatoColumn3.setMinWidth(150);
         nombrePlatoColumn3.setCellValueFactory(new PropertyValueFactory<>("nombre"));
 
         TableColumn<Plato, String> precioPlatoColumn3 = new TableColumn<>("Precio");
@@ -604,10 +610,10 @@ public class UOopProject extends Application {
         pedidosTable3 = new TableView<>();
         pedidosTable3.setItems(pedidosTableArray3);
         pedidosTable3.getColumns().addAll(
-                idPlatoColumn1, 
-                tipoPlatoColumn1, 
-                nombrePlatoColumn1, 
-                precioPlatoColumn1
+                idPlatoColumn3, 
+                tipoPlatoColumn3, 
+                nombrePlatoColumn3, 
+                precioPlatoColumn3
         );
         
         // - mesa 3 - comprobante
