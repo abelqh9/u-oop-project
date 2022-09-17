@@ -39,6 +39,8 @@ public class UOopProject extends Application {
     ObservableList<Plato> pedidosTableArray1 = FXCollections.observableArrayList();
 
     //
+    Mesa mesa2;
+    Trabajador mozo2;
     TableView<Cliente> clientsTable2;
     ObservableList<Cliente> clientsTableArray2 = FXCollections.observableArrayList();
 
@@ -49,6 +51,8 @@ public class UOopProject extends Application {
     ObservableList<Plato> pedidosTableArray2 = FXCollections.observableArrayList();
 
     //
+    Mesa mesa3;
+    Trabajador mozo3;
     TableView<Cliente> clientsTable3;
     ObservableList<Cliente> clientsTableArray3 = FXCollections.observableArrayList();
 
@@ -317,6 +321,15 @@ public class UOopProject extends Application {
         // - mesa 1
         
         // mesa 2
+        
+        mesa2 = new Mesa(
+            2,
+            2,
+            clientsTableArray2,
+            pedidosTableArray2,
+            mozo2
+        );
+        
         Label mesaBox2Title = new Label("Mesa 2");
         mesaBox2Title.getStyleClass().add("h2");
         mesaBox2Title.setMaxWidth(Double.MAX_VALUE);
@@ -328,6 +341,13 @@ public class UOopProject extends Application {
         
         
         Button mesaBox2ClientsButton = new Button("Añadir");
+        mesaBox2ClientsButton.setOnAction(e -> {
+            Cliente newClient = AddClientBox.display();
+            System.out.println(newClient);
+            this.clientsTableArray2.add(newClient);
+            mesa2.setClientes(clientsTableArray2);
+            clientsTable2.getItems();
+        });
         
         HBox mesaBox2ClientsTittleButtonBox = new HBox(20);
         mesaBox2ClientsTittleButtonBox.getChildren().addAll(mesaBox2ClientsTitle, mesaBox2ClientsButton);
@@ -382,6 +402,13 @@ public class UOopProject extends Application {
         mesaBox2WorkersTitle.getStyleClass().add("h3");
         
         Button mesaBox2WorkersButton = new Button("Añadir");
+        mesaBox2WorkersButton.setOnAction(e -> {
+            Trabajador mozoSeleccionado = AddMozoBox.display();
+            System.out.println(mozoSeleccionado);
+            this.workersTableArray2.add(mozoSeleccionado);
+            mesa2.setTrabajador(mozoSeleccionado);
+            workersTable2.getItems();
+        });
         
         HBox mesaBox2WorkersTittleButtonBox = new HBox(20);
         mesaBox2WorkersTittleButtonBox.getChildren().addAll(mesaBox2WorkersTitle, mesaBox2WorkersButton);
@@ -442,6 +469,13 @@ public class UOopProject extends Application {
         mesaBox2PedidoTitle.getStyleClass().add("h3");
         
         Button mesaBox2PedidoButton = new Button("Añadir");
+        mesaBox2PedidoButton.setOnAction(e -> {
+            Plato platoSeleccionado = AddPlatoBox.display();
+            System.out.println(platoSeleccionado);
+            this.pedidosTableArray2.add(platoSeleccionado);
+            mesa2.setPlatos(pedidosTableArray2);
+            pedidosTable2.getItems();
+        });
         
         HBox mesaBox2PedidoTittleButtonBox = new HBox(20);
         mesaBox2PedidoTittleButtonBox.getChildren().addAll(mesaBox2PedidoTitle, mesaBox2PedidoButton);
@@ -473,6 +507,22 @@ public class UOopProject extends Application {
 
         // - mesa 2 - comprobante
         Button mesaBox2GenerarComprobanteButton = new Button("Generar Comprobante");
+        mesaBox2GenerarComprobanteButton.setOnAction(e -> {
+            boolean limpiarMesa = SeePedido.display(mesa2);
+            System.out.println(limpiarMesa);
+            if(limpiarMesa){
+                clientsTableArray2.clear();
+                workersTableArray2.clear();
+                pedidosTableArray2.clear();
+                mesa2 = new Mesa(
+                    2,
+                    2,
+                    clientsTableArray2,
+                    pedidosTableArray2,
+                    mozo2
+                );
+            }
+        });
 
         //
         VBox mesaBox2 = new VBox(15);
@@ -493,6 +543,15 @@ public class UOopProject extends Application {
         // - mesa 2
         
         // mesa 3
+        
+        mesa3 = new Mesa(
+            3,
+            3,
+            clientsTableArray3,
+            pedidosTableArray3,
+            mozo2
+        );
+        
         Label mesaBox3Title = new Label("Mesa 3");
         mesaBox3Title.getStyleClass().add("h2");
         mesaBox3Title.setMaxWidth(Double.MAX_VALUE);
@@ -503,6 +562,13 @@ public class UOopProject extends Application {
         mesaBox3ClientsTitle.getStyleClass().add("h3");
         
         Button mesaBox3ClientsButton = new Button("Añadir");
+        mesaBox3ClientsButton.setOnAction(e -> {
+            Cliente newClient = AddClientBox.display();
+            System.out.println(newClient);
+            this.clientsTableArray3.add(newClient);
+            mesa3.setClientes(clientsTableArray3);
+            clientsTable3.getItems();
+        });
         
         HBox mesaBox3ClientsTittleButtonBox = new HBox(20);
         mesaBox3ClientsTittleButtonBox.getChildren().addAll(mesaBox3ClientsTitle, mesaBox3ClientsButton);
@@ -542,14 +608,14 @@ public class UOopProject extends Application {
         clientsTable3 = new TableView<>();
         clientsTable3.setItems(clientsTableArray3);
         clientsTable3.getColumns().addAll(
-                idClientColumn2, 
-                tipoDocClientColumn2, 
-                numeroDocClientColumn2, 
-                nombreClientColumn2, 
-                sexoClientColumn2, 
-                edadClientColumn2, 
-                celularClientColumn2, 
-                correoClientColumn2
+                idClientColumn3, 
+                tipoDocClientColumn3, 
+                numeroDocClientColumn3, 
+                nombreClientColumn3, 
+                sexoClientColumn3, 
+                edadClientColumn3, 
+                celularClientColumn3, 
+                correoClientColumn3
         );
 
         // - mesa 3 - Mozo
@@ -557,6 +623,13 @@ public class UOopProject extends Application {
         mesaBox3WorkersTitle.getStyleClass().add("h3");
         
         Button mesaBox3WorkersButton = new Button("Añadir");
+        mesaBox3WorkersButton.setOnAction(e -> {
+            Trabajador mozoSeleccionado = AddMozoBox.display();
+            System.out.println(mozoSeleccionado);
+            this.workersTableArray3.add(mozoSeleccionado);
+            mesa3.setTrabajador(mozoSeleccionado);
+            workersTable3.getItems();
+        });
         
         HBox mesaBox3WorkersTittleButtonBox = new HBox(20);
         mesaBox3WorkersTittleButtonBox.getChildren().addAll(mesaBox3WorkersTitle, mesaBox3WorkersButton);
@@ -617,6 +690,13 @@ public class UOopProject extends Application {
         mesaBox3PedidoTitle.getStyleClass().add("h3");
         
         Button mesaBox3PedidoButton = new Button("Añadir");
+        mesaBox3PedidoButton.setOnAction(e -> {
+            Plato platoSeleccionado = AddPlatoBox.display();
+            System.out.println(platoSeleccionado);
+            this.pedidosTableArray3.add(platoSeleccionado);
+            mesa3.setPlatos(pedidosTableArray3);
+            pedidosTable3.getItems();
+        });
         
         HBox mesaBox3PedidoTittleButtonBox = new HBox(20);
         mesaBox3PedidoTittleButtonBox.getChildren().addAll(mesaBox3PedidoTitle, mesaBox3PedidoButton);
@@ -648,6 +728,22 @@ public class UOopProject extends Application {
         
         // - mesa 3 - comprobante
         Button mesaBox3GenerarComprobanteButton = new Button("Generar Comprobante");
+        mesaBox3GenerarComprobanteButton.setOnAction(e -> {
+            boolean limpiarMesa = SeePedido.display(mesa3);
+            System.out.println(limpiarMesa);
+            if(limpiarMesa){
+                clientsTableArray3.clear();
+                workersTableArray3.clear();
+                pedidosTableArray3.clear();
+                mesa3 = new Mesa(
+                    3,
+                    3,
+                    clientsTableArray3,
+                    pedidosTableArray3,
+                    mozo3
+                );
+            }
+        });
 
         //
         VBox mesaBox3 = new VBox(15);
