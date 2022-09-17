@@ -4,6 +4,8 @@
  */
 package u.oop.project;
 
+import javafx.beans.property.SimpleStringProperty;
+
 /**
  *
  * @author Abel
@@ -13,7 +15,7 @@ public class Persona {
     private int id;
     private String tipo_doc;
     private int numero_doc;
-    private String nombre;
+    private SimpleStringProperty nombre;
     private String sexo;
     private int edad;
     private int celular;
@@ -22,7 +24,7 @@ public class Persona {
         this.id = id;
         this.tipo_doc = tipo_doc;
         this.numero_doc = numero_doc;
-        this.nombre = nombre;
+        this.nombre = new SimpleStringProperty(nombre);
         this.sexo = sexo;
         this.edad = edad;
         this.celular = celular;
@@ -53,11 +55,11 @@ public class Persona {
     }
 
     public String getNombre() {
-        return nombre;
+        return nombre.get();
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombre = new SimpleStringProperty(nombre);
     }
 
     public String getSexo() {

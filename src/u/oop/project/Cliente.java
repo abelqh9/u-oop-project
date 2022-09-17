@@ -30,3 +30,28 @@ public class Cliente extends Persona{
         return "Cliente{" + "correo=" + correo + ", id=" + this.getId() + ", tipo_doc=" + this.getTipo_doc() + ", numero_doc=" + this.getNumero_doc() + ", nombre=" + this.getNombre() + ", sexo=" + this.getSexo() + ", edad=" + this.getEdad() + ", celular=" + this.getCelular() + '}';
     }
 }
+
+
+//public class Cliente {
+//    private String name;
+//
+//    public Cliente(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Cliente{" + "name=" + name + '}';
+//    }
+//    
+//    
+//}
+

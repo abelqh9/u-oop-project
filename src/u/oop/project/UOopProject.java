@@ -81,8 +81,8 @@ public class UOopProject extends Application {
 
         startScene = new Scene(titleWithButtonBox, 1000, 600);
         startScene.getStylesheets().add(getClass().getResource("./styles.css").toExternalForm());
-
         // - START SCENE
+        
         // DASHBOARD SCENE
         Label dashboardSceneTitle = new Label("Happy Chicken");
         dashboardSceneTitle.getStyleClass().add("h1");
@@ -107,12 +107,8 @@ public class UOopProject extends Application {
             Cliente newClient = AddClientBox.display();
             System.out.println(newClient);
             this.clientsTableArray1.add(newClient);
-            clientsTable1.setItems(this.clientsTableArray1);
-            System.out.println(clientsTable1.getItems());
+            clientsTable1.getItems();
         });
-        //VBox mesaBox1ClientsButtonBox = new VBox();
-        //mesaBox1ClientsButtonBox.getChildren().add(mesaBox1ClientsButton);
-        //mesaBox1ClientsButtonBox.setAlignment(Pos.BASELINE_RIGHT);
         
         HBox mesaBox1ClientsTittleButtonBox = new HBox(20);
         mesaBox1ClientsTittleButtonBox.getChildren().addAll(mesaBox1ClientsTitle, mesaBox1ClientsButton);
@@ -131,7 +127,7 @@ public class UOopProject extends Application {
 
         TableColumn<Cliente, String> nombreClientColumn1 = new TableColumn<>("Nombre");
         nombreClientColumn1.setMaxWidth(70);
-        nombreClientColumn1.setCellValueFactory(new PropertyValueFactory<Cliente, String>("nombre"));
+        nombreClientColumn1.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
 
         TableColumn<Cliente, String> sexoClientColumn1 = new TableColumn<>("Sexo");
         sexoClientColumn1.setMaxWidth(50);
@@ -152,6 +148,7 @@ public class UOopProject extends Application {
         clientsTable1 = new TableView<>();
         clientsTable1.setItems(clientsTableArray1);
         clientsTable1.getColumns().addAll(
+                //nameColumn,
                 idClientColumn1, 
                 tipoDocClientColumn1, 
                 numeroDocClientColumn1, 
@@ -167,9 +164,6 @@ public class UOopProject extends Application {
         mesaBox1WorkersTitle.getStyleClass().add("h3");
         
         Button mesaBox1WorkersButton = new Button("Añadir");
-        //VBox mesaBox1WorkersButtonBox = new VBox();
-        //mesaBox1WorkersButtonBox.getChildren().add(mesaBox1WorkersButton);
-        //mesaBox1WorkersButtonBox.setAlignment(Pos.BASELINE_RIGHT);
         
         HBox mesaBox1WorkersTittleButtonBox = new HBox(20);
         mesaBox1WorkersTittleButtonBox.getChildren().addAll(mesaBox1WorkersTitle, mesaBox1WorkersButton);
@@ -230,9 +224,6 @@ public class UOopProject extends Application {
         mesaBox1PedidoTitle.getStyleClass().add("h3");
         
         Button mesaBox1PedidoButton = new Button("Añadir");
-        //VBox mesaBox1PedidoButtonBox = new VBox();
-        //mesaBox1PedidoButtonBox.getChildren().add(mesaBox1PedidoButton);
-        //mesaBox1PedidoButtonBox.setAlignment(Pos.BASELINE_RIGHT);
         
         HBox mesaBox1PedidoTittleButtonBox = new HBox(20);
         mesaBox1PedidoTittleButtonBox.getChildren().addAll(mesaBox1PedidoTitle, mesaBox1PedidoButton);
@@ -295,9 +286,6 @@ public class UOopProject extends Application {
         
         
         Button mesaBox2ClientsButton = new Button("Añadir");
-        //VBox mesaBox2ClientsButtonBox = new VBox();
-        //mesaBox2ClientsButtonBox.getChildren().add(mesaBox2ClientsButton);
-        //mesaBox2ClientsButtonBox.setAlignment(Pos.BASELINE_RIGHT);
         
         HBox mesaBox2ClientsTittleButtonBox = new HBox(20);
         mesaBox2ClientsTittleButtonBox.getChildren().addAll(mesaBox2ClientsTitle, mesaBox2ClientsButton);
@@ -337,14 +325,14 @@ public class UOopProject extends Application {
         clientsTable2 = new TableView<>();
         clientsTable2.setItems(clientsTableArray2);
         clientsTable2.getColumns().addAll(
-                idClientColumn1, 
-                tipoDocClientColumn1, 
-                numeroDocClientColumn1, 
-                nombreClientColumn1, 
-                sexoClientColumn1, 
-                edadClientColumn1, 
-                celularClientColumn1, 
-                correoClientColumn1
+                idClientColumn2, 
+                tipoDocClientColumn2, 
+                numeroDocClientColumn2, 
+                nombreClientColumn2, 
+                sexoClientColumn2, 
+                edadClientColumn2, 
+                celularClientColumn2, 
+                correoClientColumn2
         );
 
         // mesa 2 - Mozo
@@ -352,9 +340,6 @@ public class UOopProject extends Application {
         mesaBox2WorkersTitle.getStyleClass().add("h3");
         
         Button mesaBox2WorkersButton = new Button("Añadir");
-        //VBox mesaBox2WorkersButtonBox = new VBox();
-        //mesaBox2WorkersButtonBox.getChildren().add(mesaBox2WorkersButton);
-        //mesaBox2WorkersButtonBox.setAlignment(Pos.BASELINE_RIGHT);
         
         HBox mesaBox2WorkersTittleButtonBox = new HBox(20);
         mesaBox2WorkersTittleButtonBox.getChildren().addAll(mesaBox2WorkersTitle, mesaBox2WorkersButton);
@@ -410,16 +395,11 @@ public class UOopProject extends Application {
                 sueldoWorkerColumn1
         );
 
-        
-
         // mesa 2 - pedido
         Label mesaBox2PedidoTitle = new Label("Pedido:");
         mesaBox2PedidoTitle.getStyleClass().add("h3");
         
         Button mesaBox2PedidoButton = new Button("Añadir");
-//        VBox mesaBox2PedidoButtonBox = new VBox();
-//        mesaBox2PedidoButtonBox.getChildren().add(mesaBox2PedidoButton);
-//        mesaBox2PedidoButtonBox.setAlignment(Pos.BASELINE_RIGHT);
         
         HBox mesaBox2PedidoTittleButtonBox = new HBox(20);
         mesaBox2PedidoTittleButtonBox.getChildren().addAll(mesaBox2PedidoTitle, mesaBox2PedidoButton);
@@ -448,8 +428,6 @@ public class UOopProject extends Application {
                 nombrePlatoColumn1, 
                 precioPlatoColumn1
         );
-
-        
 
         // - mesa 2 - comprobante
         Button mesaBox2GenerarComprobanteButton = new Button("Generar Comprobante");
@@ -483,9 +461,6 @@ public class UOopProject extends Application {
         mesaBox3ClientsTitle.getStyleClass().add("h3");
         
         Button mesaBox3ClientsButton = new Button("Añadir");
-        //VBox mesaBox3ClientsButtonBox = new VBox();
-        //mesaBox3ClientsButtonBox.getChildren().add(mesaBox3ClientsButton);
-        //mesaBox3ClientsButtonBox.setAlignment(Pos.BASELINE_RIGHT);
         
         HBox mesaBox3ClientsTittleButtonBox = new HBox(20);
         mesaBox3ClientsTittleButtonBox.getChildren().addAll(mesaBox3ClientsTitle, mesaBox3ClientsButton);
@@ -525,14 +500,14 @@ public class UOopProject extends Application {
         clientsTable3 = new TableView<>();
         clientsTable3.setItems(clientsTableArray3);
         clientsTable3.getColumns().addAll(
-                idClientColumn1, 
-                tipoDocClientColumn1, 
-                numeroDocClientColumn1, 
-                nombreClientColumn1, 
-                sexoClientColumn1, 
-                edadClientColumn1, 
-                celularClientColumn1, 
-                correoClientColumn1
+                idClientColumn2, 
+                tipoDocClientColumn2, 
+                numeroDocClientColumn2, 
+                nombreClientColumn2, 
+                sexoClientColumn2, 
+                edadClientColumn2, 
+                celularClientColumn2, 
+                correoClientColumn2
         );
 
         // - mesa 3 - Mozo
@@ -540,9 +515,6 @@ public class UOopProject extends Application {
         mesaBox3WorkersTitle.getStyleClass().add("h3");
         
         Button mesaBox3WorkersButton = new Button("Añadir");
-        //VBox mesaBox3WorkersButtonBox = new VBox();
-        //mesaBox3WorkersButtonBox.getChildren().add(mesaBox3WorkersButton);
-        //mesaBox3WorkersButtonBox.setAlignment(Pos.BASELINE_RIGHT);
         
         HBox mesaBox3WorkersTittleButtonBox = new HBox(20);
         mesaBox3WorkersTittleButtonBox.getChildren().addAll(mesaBox3WorkersTitle, mesaBox3WorkersButton);
@@ -603,9 +575,6 @@ public class UOopProject extends Application {
         mesaBox3PedidoTitle.getStyleClass().add("h3");
         
         Button mesaBox3PedidoButton = new Button("Añadir");
-        //VBox mesaBox3PedidoButtonBox = new VBox();
-        //mesaBox3PedidoButtonBox.getChildren().add(mesaBox3PedidoButton);
-        //mesaBox3PedidoButtonBox.setAlignment(Pos.BASELINE_RIGHT);
         
         HBox mesaBox3PedidoTittleButtonBox = new HBox(20);
         mesaBox3PedidoTittleButtonBox.getChildren().addAll(mesaBox3PedidoTitle, mesaBox3PedidoButton);
@@ -676,8 +645,14 @@ public class UOopProject extends Application {
         dashboardScene.getStylesheets().add(getClass().getResource("./styles.css").toExternalForm());
 
         // - DASHBOARD SCENE
+        
         app.setScene(startScene);
         app.show();
     }
-
+    
+    public ObservableList<Cliente> getCliente1(){
+        ObservableList<Cliente> clientes1 = FXCollections.observableArrayList();
+        clientes1.add(new Cliente("d", 2, "d", 3, "das", "das", 2, 222));
+        return clientes1;
+    }
 }
